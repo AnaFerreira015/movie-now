@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
 import { Container, Card, Col, Row, Button } from 'react-bootstrap';
+import Header from '../../components/Header';
 
-class index extends Component {
+class Main extends Component {
   state = {};
 
   render() {
     return (
       <>
+        <Header />
         <Container
           style={{
             paddingTop: 50,
@@ -56,4 +58,4 @@ class index extends Component {
   }
 }
 
-export default index;
+export default Main;

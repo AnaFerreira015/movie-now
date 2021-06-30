@@ -1,7 +1,7 @@
 import React from 'react';
 
 import Header from '../../components/Header';
-import { StyledContainer, StyledRow, StyledButton, StyledCard } from './styles';
+import { StyledContainer, StyledRow, StyledButton, StyledCard, StyledCardImg, StyledCardBody, StyledCardText } from './styles';
 
 function Main() {
   return (
@@ -13,33 +13,68 @@ function Main() {
         </h1>
         <StyledRow>
           <StyledCard>
-            <StyledCard.Img
+            <StyledCardImg
               variant="top"
-              style={{
-                width: 220,
-                height: 320,
-                alignSelf: 'center',
-                paddingTop: 20,
-                cursor: 'pointer',
-              }}
               src="https://cdn.fstatic.com/media/movies/covers/2020/04/blindspot-new_qGVqRYJ.jpg"
             />
-            <StyledCard.Body
-              style={{
-                display: 'flex',
-                flexDirection: 'column',
-                justifyContent: 'space-between',
-              }}
-            >
+            <StyledCardBody>
               <StyledCard.Title>Card Title</StyledCard.Title>
-              <StyledCard.Text style={{ fontSize: 12 }}>
+              <StyledCardText>
                 Some quick example text to build on the card title and make up
                 the bulk of the card`&apos;`s content.
-              </StyledCard.Text>
+              </StyledCardText>
               <StyledButton style={{ width: '100%' }} variant="outline-dark">
                 Go somewhere
               </StyledButton>
-            </StyledCard.Body>
+            </StyledCardBody>
+          </StyledCard>
+          <StyledCard>
+            <StyledCardImg
+              variant="top"
+              src="https://cdn.fstatic.com/media/movies/covers/2020/04/blindspot-new_qGVqRYJ.jpg"
+            />
+            <StyledCardBody>
+              <StyledCard.Title>Card Title</StyledCard.Title>
+              <StyledCardText>
+                Some quick example text to build on the card title and make up
+                the bulk of the card`&apos;`s content.
+              </StyledCardText>
+              <StyledButton style={{ width: '100%' }} variant="outline-dark">
+                Go somewhere
+              </StyledButton>
+            </StyledCardBody>
+          </StyledCard>
+          <StyledCard>
+            <StyledCardImg
+              variant="top"
+              src="https://cdn.fstatic.com/media/movies/covers/2020/04/blindspot-new_qGVqRYJ.jpg"
+            />
+            <StyledCardBody>
+              <StyledCard.Title>Card Title</StyledCard.Title>
+              <StyledCardText>
+                Some quick example text to build on the card title and make up
+                the bulk of the card`&apos;`s content.
+              </StyledCardText>
+              <StyledButton style={{ width: '100%' }} variant="outline-dark">
+                Go somewhere
+              </StyledButton>
+            </StyledCardBody>
+          </StyledCard>
+          <StyledCard>
+            <StyledCardImg
+              variant="top"
+              src="https://cdn.fstatic.com/media/movies/covers/2020/04/blindspot-new_qGVqRYJ.jpg"
+            />
+            <StyledCardBody>
+              <StyledCard.Title>Card Title</StyledCard.Title>
+              <StyledCardText>
+                Some quick example text to build on the card title and make up
+                the bulk of the card`&apos;`s content.
+              </StyledCardText>
+              <StyledButton style={{ width: '100%' }} variant="outline-dark">
+                Go somewhere
+              </StyledButton>
+            </StyledCardBody>
           </StyledCard>
         </StyledRow>
       </StyledContainer>

@@ -1,9 +1,26 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import firebase from 'firebase';
 
 import Header from '../../components/Header';
 import { StyledContainer, StyledRow, StyledButton, StyledCard, StyledCardImg, StyledCardBody, StyledCardText } from './styles';
 
 function Main() {
+
+  const [movies, setMovies] = useState([]);
+  useEffect(() => {
+    async function loadMovies() {
+      const db = firebase.firestore();
+
+      db.collection('movies').get().then((querySnapshot) => {
+        querySnapshot.forEach((doc) => {
+          console.log(doc.data());
+        });
+      });
+    }
+
+    loadMovies();
+  }, []);
+
   return (
     <>
       <Header />

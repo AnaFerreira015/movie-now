@@ -25,8 +25,8 @@ export const StyledCard = (props => <Card {...props} />)`
 `;
 
 export const StyledCardImg = (props => <Card.img {...props} />)`
-  width: 220px;
-  height: 320px;
+  width: 190px;
+  height: 330px;
   align-self: center;
   padding-top: 20px;
   cursor: pointer;

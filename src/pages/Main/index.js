@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import Header from '../../components/Header';
 import { StyledContainer, StyledRow, StyledButton, StyledCard, StyledCardImg, StyledCardBody, StyledCardText } from './styles';
 
-function Main() {
+function Main(props) {
 
   const [movies, setMovies] = useState([]);
   useEffect(() => {
@@ -24,6 +24,10 @@ function Main() {
     loadMovies();
   }, []);
 
+  const goListEpisodes = (id) => {
+    props.history.push('/list-episodes', { id });
+  }
+
   return (
     <>
       <Header />
@@ -33,15 +37,17 @@ function Main() {
         </h1>
         <StyledRow>
           {movies.map((movie) => (
-            <StyledCard key={movie.id}>
+            <StyledCard key={movie?.id}>
               <StyledCardImg
                 variant="top"
-                src={movie.url_picture}
+                src={movie?.url_picture}
               />
               <StyledCardBody>
-                <StyledCard.Title>{movie.name}</StyledCard.Title>
-                <StyledCardText>{movie.description}</StyledCardText>
-                <StyledButton style={{ width: '100%' }} variant="outline-dark">Watch now</StyledButton>
+                <StyledCard.Title>{movie?.name}</StyledCard.Title>
+                <StyledCardText>{movie?.description}</StyledCardText>
+                {/* <Link to="/list-episodes" > */}
+                  <StyledButton style={{ width: '100%' }} onClick={() => goListEpisodes(movie.id)} variant="outline-dark">Watch now</StyledButton>
+                {/* </Link> */}
               </StyledCardBody>
             </StyledCard>
           ))}

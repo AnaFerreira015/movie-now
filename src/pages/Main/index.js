@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import firebase from 'firebase';
+import { Link } from 'react-router-dom';
 
 import Header from '../../components/Header';
 import { StyledContainer, StyledRow, StyledButton, StyledCard, StyledCardImg, StyledCardBody, StyledCardText } from './styles';

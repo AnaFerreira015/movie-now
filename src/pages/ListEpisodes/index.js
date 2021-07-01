@@ -23,6 +23,10 @@ function ListMovies(props) {
     loadEpisodes();
   }, []);
 
+  const watchEpisode = (id, name, url_movie) => {
+    props.history.push('/watch', { id, name, url_movie });
+  }
+
   return (
     <>
       <Header />
@@ -31,9 +35,9 @@ function ListMovies(props) {
         <List>
           {episodes?.length >0 ? (
             episodes.map(ep => (
-              <li key={ep.id}>
-                <p>{ep.name}</p>
-                <StyledButton>Watch Now</StyledButton>
+              <li key={ep?.id}>
+                <p>{ep?.name}</p>
+                <StyledButton onClick={() => watchEpisode(ep?.id, ep?.name, ep?.url_movie)}>Watch Now</StyledButton>
               </li>
             )) 
           ) : (

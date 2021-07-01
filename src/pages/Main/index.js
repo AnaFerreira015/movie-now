@@ -26,7 +26,7 @@ function Main(props) {
 
   const goListEpisodes = (id, name) => {
     props.history.push('/list-episodes', { id, name });
-  }
+  };
 
   return (
     <>
@@ -41,13 +41,12 @@ function Main(props) {
               <StyledCardImg
                 variant="top"
                 src={movie?.url_picture}
+                onClick={() => goListEpisodes(movie?.id, movie?.name)}
               />
               <StyledCardBody>
                 <StyledCard.Title>{movie?.name}</StyledCard.Title>
                 <StyledCardText>{movie?.description}</StyledCardText>
-                {/* <Link to="/list-episodes" > */}
-                  <StyledButton style={{ width: '100%' }} onClick={() => goListEpisodes(movie?.id, movie?.name)} variant="outline-dark">Watch now</StyledButton>
-                {/* </Link> */}
+                <StyledButton style={{ width: '100%' }} onClick={() => goListEpisodes(movie?.id, movie?.name)} variant="outline-dark">Watch now</StyledButton>
               </StyledCardBody>
             </StyledCard>
           ))}

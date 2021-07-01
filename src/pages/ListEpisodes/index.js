@@ -1,20 +1,44 @@
 import React, { useState, useEffect } from 'react';
-import { StyledContainer, Title, List, StyledButton } from './styles';
+import firebase from 'firebase';
+import { StyledContainer, Title, List, StyledButton, Information } from './styles';
 import Header from '../../components/Header';
 
 function ListMovies(props) {
+  const {id, name} = props.history.location.state;
+  const [episodes, setEpisodes] = useState([]);
+
   useEffect(() => {
-    console.log(props);
+    async function loadEpisodes() {
+      const db = firebase.firestore();
+
+      db.collection(`movies/${id}/episodes`).orderBy('id').get().then((querySnapshot) => {
+        const arrEpisoddes = [];
+        querySnapshot.forEach((doc) => {
+          arrEpisoddes.push(doc.data());
+        });
+        setEpisodes(arrEpisoddes);
+      });
+    }
+
+    loadEpisodes();
   }, []);
+
   return (
     <>
       <Header />
       <StyledContainer>
-        <Title>Name Serie</Title>
+        <Title>{name}</Title>
         <List>
-          <li>
-            <p>Primeiro episódio</p>
-            <StyledButton>Watch Now</StyledButton></li>
+          {episodes?.length >0 ? (
+            episodes.map(ep => (
+              <li key={ep.id}>
+                <p>{ep.name}</p>
+                <StyledButton>Watch Now</StyledButton>
+              </li>
+            )) 
+          ) : (
+            <Information>This serie is empty!</Information>
+          )}
         </List>
       </StyledContainer>
     </>

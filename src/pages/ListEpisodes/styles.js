@@ -20,6 +20,12 @@ export const Title = (props => <h1 {...props} />)`
     color: #fff;
 `
 
+export const Information = (props => <h1 {...props} />)`
+    font-size: 25px;
+    text-align: center;
+    color: #d5d5d5;
+`
+
 export const List = (props => <ul {...props} />)`
     // TOP RIGHT BOTTOM LEFT 
     padding: 100px 10px 10px 10px;
@@ -30,6 +36,7 @@ export const List = (props => <ul {...props} />)`
         color: #fff;
         display: flex;
         justify-content: space-beetwen;
+        margin: 12px;
     }
 `
 

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Navbar, Nav, Button } from 'react-bootstrap';
-import { StyledNav } from './styles';
+
 import { Link } from 'react-router-dom';
 
 function Header() {
@@ -11,9 +11,9 @@ function Header() {
       </Link>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
-          <StyledNav className="mr-auto">
+          <Nav className="mr-auto" style={{marginLeft: '75%'}}>
             <Nav className="mx-3">Welcome, Ana</Nav>
-          </StyledNav>
+          </Nav>
 
           <Nav>
             <Button variant="outline-danger">Sign Out</Button>
